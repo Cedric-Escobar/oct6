@@ -1,21 +1,188 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smith & Associates - CPA Firm</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CedSings Pawtraits · Pet Photography Studio</title>
+  <meta name="description" content="Professional pet photography studio offering portraits, studio sessions, and on‑location shoots for cats and dogs." />
+  <meta name="theme-color" content="#111827" />
+  <!-- Basic social cards -->
+  <meta property="og:title" content="CedSings Pawtraits · Pet Photography Studio" />
+  <meta property="og:description" content="Studio & on‑location pet portraits with clean, modern lighting." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=1200&auto=format&fit=crop" />
+  <style>
+    :root {
+      --bg: #0b0f19;           /* slate-950 */
+      --panel: #111827;        /* gray-900 */
+      --muted: #9ca3af;        /* gray-400 */
+      --text: #e5e7eb;         /* gray-200 */
+      --brand: #f59e0b;        /* amber-500 */
+      --accent: #22d3ee;       /* cyan-400 */
+      --ring: rgba(34, 211, 238, 0.35);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+
+    /* Header */
+    header { position: sticky; top: 0; z-index: 50; background: rgba(11,15,25,.7); backdrop-filter: blur(8px); border-bottom: 1px solid #1f2937; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: .9rem 0; }
+    .brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; letter-spacing: .3px; }
+    .brand .logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--brand), var(--accent)); display: grid; place-items: center; font-weight: 800; color: #0b0f19; box-shadow: 0 6px 24px rgba(245,158,11,.25); }
+    nav a { opacity: .85; margin-left: 1rem; border-radius: .6rem; padding: .35rem .6rem; }
+    nav a:hover { background: #1f2937; opacity: 1; }
+
+    /* Hero */
+    .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 2rem; align-items: center; padding: 4.5rem 0; }
+    .hero h1 { font-size: clamp(2rem, 4.2vw, 3.2rem); line-height: 1.15; margin: 0 0 .6rem; }
+    .hero p { color: var(--muted); margin: 0 0 1.3rem; }
+    .cta { display: inline-flex; gap: .8rem; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: .5rem; border: 1px solid #334155; padding: .7rem 1rem; border-radius: .8rem; font-weight: 600; }
+    .btn.primary { background: linear-gradient(135deg, var(--brand), var(--accent)); color: #0b0f19; border: none; box-shadow: 0 10px 28px var(--ring); }
+    .btn:hover { transform: translateY(-1px); }
+    .hero figure { position: relative; }
+    .hero img { width: 100%; height: 100%; object-fit: cover; border-radius: 1.2rem; box-shadow: 0 30px 60px rgba(0,0,0,.45); border: 1px solid #1f2937; }
+
+    /* Sections */
+    section { padding: 3.5rem 0; border-top: 1px solid #111827; }
+    h2 { font-size: clamp(1.4rem, 2.6vw, 2rem); margin: 0 0 1.2rem; }
+    .muted { color: var(--muted); }
+
+    /* Services */
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .card { background: var(--panel); padding: 1.2rem; border-radius: 1rem; border: 1px solid #1f2937; box-shadow: 0 16px 40px rgba(0,0,0,.35); display: grid; gap: .6rem; }
+    .price { font-weight: 800; font-size: 1.25rem; color: var(--accent); }
+    .card ul { margin: .2rem 0 0 1.1rem; padding: 0; color: var(--muted); }
+
+    /* Gallery */
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+    .grid img { width: 100%; height: 230px; object-fit: cover; border-radius: .8rem; border: 1px solid #1f2937; }
+
+    /* About + Contact */
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+    .panel { background: var(--panel); border: 1px solid #1f2937; border-radius: 1rem; padding: 1.2rem; }
+    .contact a { color: var(--accent); text-decoration: underline; }
+
+    /* Footer */
+    footer { padding: 2.5rem 0 3rem; color: var(--muted); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .cards, .grid, .about { grid-template-columns: 1fr; }
+      .grid img { height: 220px; }
+    }
+  </style>
 </head>
-
 <body>
-  
-      <h2>Expert Financial Guidance You Can Trust</h2>
-      <h2>Acc 343</h2>
-      
-      <button>Submit</button>
-      <button>Reset</button>
-  
-</body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">🐾</div>
+        <a href="#home" aria-label="CedSings Pawtraits Home">CedSings Pawtraits</a>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn" style="margin-left:.6rem;">Book Now</a>
+      </nav>
+    </div>
+  </header>
 
+  <main id="home" class="container">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <h1 id="hero-title">Studio‑quality portraits for your favorite paws</h1>
+        <p>Clean, modern lighting, patient handling, and lots of treats. We specialize in cats & dogs—solo portraits, siblings, and pet + parent shots.</p>
+        <div class="cta">
+          <a href="#contact" class="btn primary">Book a Session</a>
+          <a href="#portfolio" class="btn" aria-label="View portfolio gallery">View Portfolio</a>
+        </div>
+      </div>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=1400&auto=format&fit=crop" alt="Happy corgi sitting in a photo studio with a seamless backdrop" />
+      </figure>
+    </section>
+
+    <!-- Services -->
+    <section id="services" aria-labelledby="services-title">
+      <h2 id="services-title">Packages & Pricing</h2>
+      <p class="muted">Simple, transparent pricing. All sessions include gentle handling, water breaks, and a pre‑shoot consult.</p>
+      <div class="cards" role="list">
+        <article class="card" role="listitem">
+          <h3>Mini Studio</h3>
+          <div class="price">$149</div>
+          <ul>
+            <li>30 minutes · 1 pet</li>
+            <li>1 backdrop · 10 edited photos</li>
+            <li>Web gallery download</li>
+          </ul>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Signature Portrait</h3>
+          <div class="price">$299</div>
+          <ul>
+            <li>60 minutes · up to 2 pets</li>
+            <li>2 backdrops · 20 edited photos</li>
+            <li>Print‑ready files included</li>
+          </ul>
+        </article>
+        <article class="card" role="listitem">
+          <h3>On‑Location</h3>
+          <div class="price">$449</div>
+          <ul>
+            <li>90 minutes · park or home</li>
+            <li>Natural light · 30 edited photos</li>
+            <li>Travel within NYC included</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" aria-labelledby="portfolio-title">
+      <h2 id="portfolio-title">Portfolio</h2>
+      <p class="muted">A few favorites—studio and natural light sessions.</p>
+      <div class="grid">
+        <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=800&auto=format&fit=crop" alt="Tabby cat looking up against dark studio background" />
+        <img src="https://images.unsplash.com/photo-1494256997604-768d1f608cac?q=80&w=800&auto=format&fit=crop" alt="Golden retriever portrait with tongue out" />
+        <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=800&auto=format&fit=crop" alt="Puppy sitting on a chair in studio" />
+        <img src="https://images.unsplash.com/photo-1525253013412-55c1a69a5738?q=80&w=800&auto=format&fit=crop" alt="Cat lounging on a couch in natural light" />
+        <img src="https://images.unsplash.com/photo-1558944351-c0b53a3a5446?q=80&w=800&auto=format&fit=crop" alt="Dog running in a park in NYC" />
+        <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?q=80&w=800&auto=format&fit=crop" alt="Close‑up cat eyes in studio lighting" />
+      </div>
+    </section>
+
+    <!-- About + Contact -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="about">
+        <div class="panel">
+          <h2 id="about-title">About the Studio</h2>
+          <p>We’re a boutique pet photography studio in Queens, NY. We create timeless portraits with a calm, animal‑first approach—lots of patience, zero rush. Safety and comfort come first, always.</p>
+          <p class="muted">NYC business hours: Wed–Sun, 10am–6pm · Fully insured · LGBTQ+ friendly</p>
+        </div>
+        <div id="contact" class="panel contact" aria-labelledby="contact-title">
+          <h2 id="contact-title">Book a Session</h2>
+          <p>Ready to make your pet a star? Reach out and we’ll confirm availability and send prep tips.</p>
+          <p>
+            Email: <a href="mailto:studio@pawvtraits.example">studio@pawtraits.example</a><br/>
+            Phone: <a href="tel:+13475550123">(347) 555‑0123</a>
+          </p>
+          <p class="muted">Prefer online booking? Connect this page to a Vercel Serverless Function or a simple form service later.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="y"></span> CedSings Pawtraits · All rights reserved.</small>
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
 </html>
